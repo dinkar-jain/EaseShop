@@ -20,7 +20,7 @@ const NavBar = () => {
     return (
         <nav>
             <div id="NavBarBrandName">
-                <Link to="/">E-SHOP</Link>
+                <Link to="/">EaseShop</Link>
             </div>
             <div id="NavBarSignIn">
                 {SignInDetails.FirstName ?

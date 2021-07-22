@@ -183,7 +183,7 @@ const SignUpAction = (FirstName, LastName, Email, Password, ReConfirm, IsAdmin) 
     try {
         const { data } = await Axios.post("/API/Users/SignUp", { FirstName, LastName, Email, Password, ReConfirm, IsAdmin });
         if (data._id) {
-            window.location.replace("http://localhost:3000/SignIn")
+            window.location.replace("https://easeshop.herokuapp.com/SignIn")
         }
 
         else {
@@ -203,7 +203,7 @@ const SignInAction = (Email, Password) => async (Dispatch) => {
             })
             Cookie.set("SignInUserInfo", JSON.stringify(data));
             window.location.reload(false);
-            window.location.replace("http://localhost:3000")
+            window.location.replace("https://easeshop.herokuapp.com")
         }
 
         else {
@@ -224,7 +224,7 @@ const SignOutAction = (Email) => async (Dispatch) => {
         })
         Cookie.set("SignInUserInfo", JSON.stringify(data));
         window.location.reload(false);
-        window.location.replace("http://localhost:3000")
+        window.location.replace("https://easeshop.herokuapp.com")
 
     } catch (error) {
         Dispatch({ type: SIGN_OUT_FAIL, Payload: error.message })

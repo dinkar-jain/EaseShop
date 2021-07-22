@@ -23,7 +23,7 @@ const PlaceOrder = () => {
 
     const Proceed = () => {
         Dispatch(OrderCreateAction(CurrentDate, SignInDetails._id, Name, Address, CartDetails))
-        window.location.replace("http://localhost:3000/Orders")
+        window.location.replace("https://easeshop.herokuapp.com/Orders")
     }
 
     try {

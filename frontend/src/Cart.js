@@ -19,15 +19,15 @@ const Cart = () => {
         }
 
         else if (SignInDetails.Address === undefined || SignInDetails === undefined) {
-            window.location.replace("http://localhost:3000/SignIn")
+            window.location.replace("https://easeshop.herokuapp.com/SignIn")
         }
 
         else if (SignInDetails.Address === "" || SignInDetails.PhoneNumber === null) {
-            window.location.replace("http://localhost:3000/EditProfile")
+            window.location.replace("https://easeshop.herokuapp.com/EditProfile")
         }
 
         else {
-            window.location.replace("http://localhost:3000/PlaceOrder")
+            window.location.replace("https://easeshop.herokuapp.com/PlaceOrder")
         }
     }
 
