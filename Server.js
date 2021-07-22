@@ -4,6 +4,7 @@ import Mongoose from "mongoose";
 import { Users, Product, Order } from "./Model";
 import { getToken, getSignOutToken, IsAdmin, IsAuth } from "./Middleware";
 import bodyParser from "body-parser";
+import path from "path";
 import bcrypt from "bcrypt";
 
 dotenv.config();
@@ -350,7 +351,7 @@ App.get("/API/Sales", IsAuth, async (req, res) => {
 });
 
 App.get('/*', function (req, res) {
-    res.sendFile('frontend/public/index.html');
+    res.sendFile(path.join(__dirname, 'frontend/public/index.html'));
 });
 
 if (process.env.NODE_ENV === "production") {
