@@ -403,6 +403,10 @@ nav {
     width: 70%;
 }
 
+#LeftPartC {
+    width: 70%;
+}
+
 #LeftPart div {
     background-color: rgb(255, 245, 247);
 }
@@ -757,7 +761,7 @@ th, td {
     #PlaceOrder {
         display: block;
     }
-    #LeftPart, #RightPart {
+    #LeftPart, #LeftPartC, #RightPart {
         width: auto;
     }
     #ErrorPageMain h1 {

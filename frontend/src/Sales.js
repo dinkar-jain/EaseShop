@@ -35,7 +35,7 @@ const Sales = () => {
             <>
                 {Visibility ?
                     <div id="PlaceOrder">
-                        <div id="LeftPart" style={{ width: "100%" }}>
+                        <div id="LeftPartC" style={{ width: "100%" }}>
                             <div id="Address">
                                 <h3>Shipping</h3><br />
                                 <strong>Name: </strong>{Name}<br />
