@@ -350,13 +350,12 @@ App.get("/API/Sales", IsAuth, async (req, res) => {
     }
 });
 
-App.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'frontend/public/index.html'));
+App.route('/*').get(function (req, res) {
+    return res.sendFile(path.join(__dirname, 'frontend/public/index.html'));
 });
 
 if (process.env.NODE_ENV === "production") {
     App.use(Express.static("frontend/build"));
 }
-
 
 App.listen(process.env.PORT || 5000)
