@@ -349,6 +349,10 @@ App.get("/API/Sales", IsAuth, async (req, res) => {
     }
 });
 
+App.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'frontend/public/index.html'));
+});
+
 if (process.env.NODE_ENV === "production") {
     App.use(Express.static("frontend/build"));
 }
