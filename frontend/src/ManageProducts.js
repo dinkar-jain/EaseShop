@@ -113,7 +113,7 @@ const ManageProducts = () => {
                         <div id="ManageProducts" style={{ overflowX: "auto" }}>
                             <div id="AddProduct">
                                 <button onClick={function () { DisplayOtherPage() }}>Add New Product</button>
-                            </div><hr />
+                            </div><hr style={{ width: "175%" }} />
                             <table>
                                 <thead>
                                     <tr>
