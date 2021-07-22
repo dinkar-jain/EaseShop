@@ -350,8 +350,8 @@ App.get("/API/Sales", IsAuth, async (req, res) => {
     }
 });
 
-App.route('/*').get(function (req, res) {
-    return res.sendFile(path.join(__dirname, 'frontend/public/index.html'));
+App.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'frontend/src/index.js'));
 });
 
 if (process.env.NODE_ENV === "production") {
