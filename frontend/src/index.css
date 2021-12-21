@@ -761,7 +761,7 @@ th, td {
     #PlaceOrder {
         display: block;
     }
-    #LeftPart, #RightPart {
+    #LeftPart, #LeftPartC, #RightPart {
         width: auto;
     }
     #ErrorPageMain h1 {
