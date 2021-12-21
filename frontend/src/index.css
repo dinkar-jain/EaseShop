@@ -133,10 +133,15 @@ nav {
     padding-left: 1.5rem;
 }
 
-.block-2-Main, .block-3-Main {
+.block-2-Main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.block-3-Main {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .block-2 {
@@ -395,6 +400,10 @@ nav {
 
 #LeftPart {
     margin: 1rem;
+    width: 70%;
+}
+
+#LeftPartC {
     width: 70%;
 }
 
