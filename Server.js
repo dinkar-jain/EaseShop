@@ -1,8 +1,8 @@
 import Express from "express";
 import dotenv from "dotenv";
 import Mongoose from "mongoose";
-import { Users, Product, Order } from "./Model";
-import { getToken, getSignOutToken, IsAdmin, IsAuth } from "./Middleware";
+import { Users, Product, Order } from "./Model.js";
+import { getToken, getSignOutToken, IsAdmin, IsAuth } from "./Middleware.js";
 import bodyParser from "body-parser";
 import path from "path";
 import bcrypt from "bcrypt";
