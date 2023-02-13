@@ -9,7 +9,7 @@ const Sidebar = () => {
 
     const logout = async () => {
         cookie.remove("userInfo");
-        window.location.replace("http://localhost:3000")
+        window.location.replace(process.env.APP_URL)
     }
 
     return (

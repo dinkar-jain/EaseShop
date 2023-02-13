@@ -10,7 +10,7 @@ export const signInAction = (email, password) => async (dispatch) => {
             })
             cookie.set("userInfo", JSON.stringify(data.user));
             window.location.reload(false);
-            window.location.replace("http://localhost:3000")
+            window.location.replace(process.env.APP_URL)
         }
         else {
             return data;
