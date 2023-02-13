@@ -1,23 +1,79 @@
 * {
     margin: 0;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.featuredProducts:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+.actionBanner a:hover {
+    background-color: #088178 !important;
+    border: 1px solid #088178 !important;
+    color: #fff !important;
+}
+
+.filterDropdown li:hover {
+    background-color: #088178 !important;
+    color: #fff !important;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+    list-style-type: none;
+    gap: 10px;
+}
+
+.pagination li a {
+    padding: 3.5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.pagination li a:not(.activePaginationLink):hover {
+    background-color: #dee2e6;
+}
+
+.activePaginationLink {
+    background-color: #088178;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .actionBanner {
+        width: 100% !important;
+    }
+
+    .textBanner {
+        width: 100% !important;
+    }
 }
 
 nav {
+    padding: 0.5rem;
     display: flex;
+    align-items: center;
     background-color: ghostwhite;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 #NavBarBrandName {
-    width: 100%;
-    padding-top: 1.2rem;
     padding-left: 3rem;
 }
 
-#NavBarBrandName a{
+#NavBarBrandName a {
     color: black;
     text-decoration: none;
     font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -25,35 +81,25 @@ nav {
     font-weight: bold;
 }
 
-#NavBarCartOption{
-    flex: 0 0 5%;
-    width: 100%;
-    padding-top: 1.15rem;
-    padding-bottom: 1.3rem;
-    padding-right: 2rem;
-    text-align: center;
+#NavBarCartOption {
+    padding-right: 1rem;
 }
 
-#NavBarCartOption a {
-    color: black;
-    text-decoration: none;
-}
-
-#NavBarSignIn{
-    position: relative;
-    display: inline-block;
-}
-
-#NavBarSignIn img {
-    padding: 3rem;
-    padding-top: 1.4rem;
-    padding-bottom: 1rem;
+#NavBarCartOption img {
     height: 1.5rem;
     width: 2rem;
 }
 
+#NavBarSignIn {
+    padding-right: 1rem;
+}
+
+#NavBarSignIn a {
+    color: black;
+    text-decoration: none;
+}
+
 #NavBarUserName {
-    padding-top: 1.35rem;
     padding-right: 2rem;
     font-size: 1.4rem;
     font-weight: bold;
@@ -64,26 +110,30 @@ nav {
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-  }
-  
+}
+
 #dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
+}
 
-#dropdown-content a:hover {background-color: #ddd;}
+#dropdown-content a:hover {
+    background-color: #ddd;
+}
 
-#NavBarSignIn:hover #dropdown-content {display: block;}
+#NavBarSignIn:hover #dropdown-content {
+    display: block;
+}
 
-#ErrorPage{
+#ErrorPage {
     text-align: center;
 }
 
-#ErrorPageMain{
+#ErrorPageMain {
     padding-top: 5rem;
     font-family: sans-serif;
     text-transform: uppercase;
@@ -158,7 +208,9 @@ nav {
     padding: 1rem;
 }
 
-.block-2 a, .block-1 a, .block-3 a {
+.block-2 a,
+.block-1 a,
+.block-3 a {
     text-decoration: none;
     color: black;
 }
@@ -183,7 +235,7 @@ nav {
     margin-left: 7rem;
 }
 
-#Orders{
+#Orders {
     padding-top: 1rem;
 }
 
@@ -198,11 +250,12 @@ nav {
     border-collapse: collapse;
 }
 
-#Orders table tr :nth-of-type(odd){
+#Orders table tr :nth-of-type(odd) {
     background-color: #f4f4f4;
 }
 
-#Orders table td, #Orders table th {
+#Orders table td,
+#Orders table th {
     text-align: left;
     border: 0.1rem solid #e4e4e4;
     padding: 0.5rem;
@@ -224,7 +277,7 @@ nav {
     justify-content: center;
 }
 
-#Content{
+#Content {
     height: 100%;
 }
 
@@ -265,13 +318,13 @@ nav {
     margin: 20px;
 }
 
-#Home h2 a{
+#Home h2 a {
     cursor: pointer;
     text-decoration: none;
     color: cornflowerblue;
 }
 
-#Product{
+#Product {
     display: flex;
 }
 
@@ -280,13 +333,13 @@ nav {
     text-align: center;
 }
 
-#ProductImage img{
+#ProductImage img {
     width: 250px;
     height: 400px;
     padding-top: 3rem;
 }
 
-#ProductInformation{
+#ProductInformation {
     width: 33%;
     padding-left: 25px;
     padding-top: 70px;
@@ -303,7 +356,7 @@ nav {
     border: 1px solid black;
 }
 
-#ProductCartBox button{
+#ProductCartBox button {
     cursor: pointer;
     width: 100%;
     border: 1px solid rgb(255, 174, 0);
@@ -316,7 +369,7 @@ nav {
     color: white;
 }
 
-#Cart{
+#Cart {
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -327,7 +380,7 @@ nav {
     padding-bottom: 30px;
 }
 
-#CartHeadings h2{
+#CartHeadings h2 {
     width: 100%;
 }
 
@@ -411,7 +464,8 @@ nav {
     background-color: rgb(255, 245, 247);
 }
 
-#Address, #OrderingProducts {
+#Address,
+#OrderingProducts {
     margin: 1rem;
     padding: 0.5rem;
     padding-top: 1rem;
@@ -468,7 +522,7 @@ nav {
     padding-bottom: 2rem;
 }
 
-#SignInMain{
+#SignInMain {
     width: 30%;
     padding: 1rem;
     padding-top: 2rem;
@@ -483,11 +537,11 @@ nav {
     height: 20px;
 }
 
-#SignInMainPasswordField{
+#SignInMainPasswordField {
     background-color: #c3c9f545;
 }
 
-#SignInMain button{
+#SignInMain button {
     cursor: pointer;
     outline-style: none;
     border: 1px solid black;
@@ -496,7 +550,7 @@ nav {
     height: 30px;
 }
 
-#SignInMainSignInButton{
+#SignInMainSignInButton {
     background-color: orange;
 }
 
@@ -514,7 +568,7 @@ nav {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#SignUpMain{
+#SignUpMain {
     background-color: white;
     width: 35%;
     padding: 1rem;
@@ -533,7 +587,7 @@ nav {
     outline-style: none;
 }
 
-.SignUpMainSpecificField{
+.SignUpMainSpecificField {
     background-color: #c3c9f545;
 }
 
@@ -541,7 +595,7 @@ nav {
     margin-right: 10px;
 }
 
-#SignUpMain button{
+#SignUpMain button {
     background-image: url("https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/122076753/original/bb690a94e2aecc1219cbce5695cfe06bda565e11/mw2-vip-menu-access.jpg");
     cursor: pointer;
     outline-style: none;
@@ -562,7 +616,7 @@ nav {
     padding-bottom: 1rem;
 }
 
-#ProductCreateMain{
+#ProductCreateMain {
     width: 33%;
     padding: 1rem;
     padding-top: 2rem;
@@ -583,7 +637,7 @@ nav {
     height: 20px;
 }
 
-#ProductCreateMain button{
+#ProductCreateMain button {
     cursor: pointer;
     outline-style: none;
     border: 1px solid black;
@@ -604,11 +658,12 @@ nav {
     padding: 0.3rem;
 }
 
-#ManageProducts{
+#ManageProducts {
     padding-top: 2rem;
 }
 
-th, td {
+th,
+td {
     padding: 0.5rem;
 }
 
@@ -621,7 +676,7 @@ th, td {
     text-align: center;
 }
 
-#AddProduct button{
+#AddProduct button {
     outline-style: none;
     cursor: pointer;
     border: 1px solid;
@@ -640,12 +695,12 @@ th, td {
     background-color: lavender;
 }
 
-#EditProfileMain{
+#EditProfileMain {
     width: 100%;
     margin: 3rem;
-} 
+}
 
-#EditProfile div input{
+#EditProfile div input {
     width: 85%;
     margin-left: 1rem;
     margin-bottom: 1rem;
@@ -666,7 +721,7 @@ th, td {
     padding-bottom: .5rem;
 }
 
-#EditProfile div button{
+#EditProfile div button {
     outline-style: none;
     cursor: pointer;
     color: white;
@@ -676,7 +731,7 @@ th, td {
     border-radius: 10px;
 }
 
-#EditProfileMainButton{
+#EditProfileMainButton {
     text-align: center;
     padding-bottom: 1rem;
 }
@@ -690,23 +745,28 @@ th, td {
     #Product {
         display: block;
     }
+
     #ProductImage {
         width: 100%;
     }
-    #ProductImage img{
+
+    #ProductImage img {
         padding-top: 2rem;
         padding-left: 0rem;
     }
+
     #ProductInformation {
         width: 100%;
         text-align: center;
         padding-left: 0rem;
         padding-top: 15px;
     }
+
     #ProductInformation p {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
+
     #ProductCart {
         width: auto;
         padding-top: 15px;
@@ -720,50 +780,67 @@ th, td {
     .MainPage-Container {
         display: block;
     }
+
     .block-1 {
         padding-top: 5rem;
     }
+
     .block-1 img {
         padding: 0;
         padding-bottom: 1rem;
         height: 15rem;
     }
-    .block-2 img, .block-3 img {
+
+    .block-2 img,
+    .block-3 img {
         height: 12rem;
         width: 10rem;
     }
+
     #SignUpMain {
         width: 55%;
     }
+
     #SignInMain {
         width: 50%;
     }
+
     #SignInMain h1 {
         font-size: 1.5rem;
     }
+
     #SignInMain h4 {
         font-size: 0.8rem;
     }
+
     #EditProfile {
         display: block;
     }
+
     #EditProfileMain {
         width: auto;
         margin: 0rem;
     }
+
     #EditProfileMain h2 {
         padding-top: 2rem;
         text-align: center;
     }
+
     #ProductCreateMain {
         width: 50%;
     }
+
     #PlaceOrder {
         display: block;
     }
-    #LeftPart, #LeftPartC, #RightPart {
+
+    #LeftPart,
+    #LeftPartC,
+    #RightPart {
         width: auto;
     }
+
     #ErrorPageMain h1 {
         font-size: 200px;
         margin-top: -65px;
@@ -774,13 +851,16 @@ th, td {
     #Home {
         padding-left: 0rem;
     }
+
     #Home img {
         height: 12rem;
         width: 9rem;
     }
+
     #Home h2 {
         font-size: 1rem;
     }
+
     #SearchBox {
         width: 100%;
     }

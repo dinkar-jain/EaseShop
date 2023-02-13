@@ -1,25 +1,19 @@
 import jwt from "jsonwebtoken";
 
-const getToken = (User) => {
-    return jwt.sign(User.toJSON(), process.env.JWT_SECRET, {
+const getToken = (user) => {
+    return jwt.sign(user.toJSON(), process.env.JWT_SECRET, {
         expiresIn: 86400
     })
 }
 
-const getSignOutToken = (User) => {
-    return jwt.sign(User.toJSON(), process.env.JWT_SECRET, {
-        expiresIn: 1
-    })
-}
-
-const IsAuth = (req, res, next) => {
+const isAuth = (req, res, next) => {
     const Token = req.headers.authorization;
     if (Token) {
         jwt.verify(Token, process.env.JWT_SECRET, (err, decode) => {
             if (err) {
                 return res.status(401).send({ msg: "Invalid Token" })
             }
-            req.User = decode;
+            req.user = decode;
             next();
             return
         })
@@ -30,11 +24,11 @@ const IsAuth = (req, res, next) => {
     }
 }
 
-const IsAdmin = (req, res, next) => {
-    if (req.User && req.User.IsAdmin) {
+const isSeller = (req, res, next) => {
+    if (req.user && req.user.isSeller) {
         return next();
     }
     return res.status(401).send({ msg: "Admin Token Is Not Valid" })
 }
 
-export { getToken, getSignOutToken, IsAuth, IsAdmin }
+export { getToken, isAuth, isSeller }
