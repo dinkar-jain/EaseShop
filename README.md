@@ -8,9 +8,9 @@ It is a fully functional e-commerce website made with technologies like
 
 It is made with the purpose of helping businesses have an online presence
 and to increase their sales. It includes features like product filtering,
-input validation, password hashing and many more...
+online payments, input validation, password hashing and many more...
 
-#### Here is the demo : https://easeshop.herokuapp.com/
+#### Here is the demo : https://easeshop.netlify.app/
 
 # To Run It Locally - 
 
@@ -34,6 +34,10 @@ npm install
 MONGODB_URL = (Your localhost MONGODB URL)
   
 JWT_SECRET = (Any secret key u want for hashing the passwords)
+
+STRIPE_SECRET_KEY = (Your Stripe Account Secret Key)
+
+STRIPE_PUBLISHABLE_KEY = (Your Stripe Account Publishable Key)
 ```
 
 5) Start MongoDB service
