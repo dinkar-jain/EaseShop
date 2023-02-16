@@ -1,5 +1,5 @@
 import cookie from "js-cookie";
-import axios from "axios";
+import axios from "../../Axios";
 
 export const signInAction = (email, password) => async (dispatch) => {
     try {

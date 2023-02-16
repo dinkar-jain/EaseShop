@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import cookie from 'js-cookie';
+import axios from '../Axios'
 import "../css/Profile.css"
-import axios from 'axios'
 import React from 'react'
 
 const ChangePassword = (props) => {

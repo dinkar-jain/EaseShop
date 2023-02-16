@@ -1,7 +1,7 @@
 import ReactPaginate from 'react-paginate';
 import { Link } from 'react-router-dom';
+import axios from '../Axios';
 import React from 'react'
-import axios from 'axios';
 
 const Products = () => {
 

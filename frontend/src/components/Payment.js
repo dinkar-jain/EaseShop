@@ -2,8 +2,8 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { useEffect, useState } from "react";
 import CheckoutForm from "./CheckoutForm";
+import Axios from "../Axios";
 import React from "react";
-import Axios from "axios";
 
 function Payment(props) {
     const [stripePromise, setStripePromise] = useState(null);

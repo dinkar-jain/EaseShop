@@ -1,10 +1,10 @@
 import React from 'react'
-import axios from 'axios'
+import axios from '../Axios'
 import "../css/LoginSignUp.css"
+import { toast } from 'react-toastify';
 import { useRef, useState } from 'react';
 import { useDispatch } from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
-import { toast } from 'react-toastify';
 import { signInAction } from "../redux/actions/authActions";
 
 const LoginSignUp = () => {

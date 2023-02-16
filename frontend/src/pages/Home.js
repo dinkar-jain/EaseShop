@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 import { Link } from 'react-router-dom';
-import axios from "axios";
+import axios from "../Axios";
 import React from 'react';
 
 const Home = () => {

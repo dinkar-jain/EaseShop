@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import { toast } from 'react-toastify';
 import ErrorPage from "./ErrorPage";
 import "../css/ManageProducts.css";
-import axios from "axios";
+import axios from "../Axios";
 import React from 'react'
 
 const ManageProducts = () => {

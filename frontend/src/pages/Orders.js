@@ -1,9 +1,9 @@
-import Order from "../components/Order";
 import Sidebar from '../components/Sidebar';
 import { useSelector } from "react-redux";
+import Order from "../components/Order";
 import ErrorPage from "./ErrorPage";
+import axios from '../Axios';
 import React from 'react'
-import axios from 'axios';
 
 const Orders = () => {
 

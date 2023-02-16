@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Payment from "../components/Payment";
 import { toast } from 'react-toastify';
 import "../css/Checkout.css"
-import axios from "axios";
+import axios from "../Axios"
 import React from 'react'
 
 const Checkout = () => {

@@ -5,9 +5,9 @@
 import { addToCartAction } from '../redux/actions/cartActions';
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from 'react-toastify';
+import axios from '../Axios';
 import '../css/Product.css'
 import React from 'react'
-import axios from 'axios';
 
 const Product = () => {
 

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import Order from "../components/Order";
 import { toast } from "react-toastify";
 import "../css/Dashboard.css"
-import axios from "axios";
+import axios from "../Axios";
 import React from 'react'
 
 const Dashboard = () => {
