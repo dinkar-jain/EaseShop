@@ -14,7 +14,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { Switch, Route } from "react-router-dom";
 import ManageProducts from "./pages/ManageProducts";
-import Stripe from "stripe";
 
 const App = () => {
     return (
@@ -32,7 +31,6 @@ const App = () => {
                     <Route exact path="/Checkout" component={Checkout}></Route>
                     <Route exact path="/Orders" component={Orders}></Route>
                     <Route exact path="/Dashboard" component={Dashboard}></Route>
-                    <Route exact path="/test" component={Stripe}></Route>
                     <Route component={ErrorPage} />
                 </Switch>
             </div>

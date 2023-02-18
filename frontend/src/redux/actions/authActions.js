@@ -10,7 +10,7 @@ export const signInAction = (email, password) => async (dispatch) => {
             })
             cookie.set("userInfo", JSON.stringify(data.user));
             window.location.reload(false);
-            window.location.replace(process.env.APP_URL)
+            window.location.replace("/");
         }
         else {
             return data;

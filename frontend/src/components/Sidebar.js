@@ -9,7 +9,7 @@ const Sidebar = () => {
 
     const logout = async () => {
         cookie.remove("userInfo");
-        window.location.replace(process.env.APP_URL)
+        window.location.replace("/")
     }
 
     return (

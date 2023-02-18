@@ -24,7 +24,7 @@ const Checkout = () => {
   const [deliveryMethod, setDeliveryMethod] = React.useState("Standard");
   const [paymentMethod, setPaymentMethod] = React.useState("Cash On Delivery");
 
-  const handleSubmit = async (paid) => {
+  const handleSubmit = async () => {
     try {
       if (email === "" || address === "" || firstName === "" || lastName === "" || postalCode === "" || country === "") {
         toast.error("Please fill in all the fields", {

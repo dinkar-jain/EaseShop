@@ -10,8 +10,8 @@ function Payment(props) {
     const [clientSecret, setClientSecret] = useState("");
 
     useEffect(() => {
-        fetch("/config").then(async (r) => {
-            const { publishableKey } = await r.json();
+        Axios.get("/config").then(async (r) => {
+            const { publishableKey } = await r.data;
             setStripePromise(loadStripe(publishableKey));
         });
     }, []);
