@@ -1,18 +1,19 @@
+import { fetchProductsAction } from "../redux/actions/productsAction";
+import { useDispatch, useSelector } from "react-redux";
 import Footer from "../components/Footer";
 import { Link } from 'react-router-dom';
-import axios from "../Axios";
 import React from 'react';
 
 const Home = () => {
 
-    const [items, setItems] = React.useState([])
+    const dispatch = useDispatch();
+
+    const products = useSelector((state) => state.products.products);
 
     React.useEffect(() => {
-        const fetchProducts = async () => {
-            const response = await axios.get('/API/Products');
-            setItems(response.data.slice(0, 8));
+        if (products.length === 0) {
+            dispatch(fetchProductsAction());
         }
-        fetchProducts();
     }, []);
 
     return (
@@ -29,7 +30,7 @@ const Home = () => {
                 <div style={{ fontSize: "4vw", fontFamily: "Spartan, sans-serif", textAlign: "center", marginTop: "3rem" }}>Featured Products</div>
                 <div style={{ textAlign: "center", fontSize: "1.3vw", fontFamily: "Spartan, sans-serif", color: "rgb(99 98 98)", marginTop: "0.5rem" }}>Summer Collection New Modern Design</div>
                 <div style={{ display: "flex", justifyContent: "space-evenly", marginTop: "2vw", flexWrap: "wrap" }}>
-                    {items.map((item, index) => {
+                    {products.slice(0, 8).map((item, index) => {
                         return (
                             <Link key={item._id} to={"/product/" + item._id} className='featuredProducts' style={{ textDecoration: "none", width: "20%", minWidth: "250px", padding: "10px 12px", border: "1px solid #cce7d0", borderRadius: "25px", cursor: "pointer", boxShadow: "20px 20px 30px rgba(0,0,0,0.02)", margin: "15px 0", transition: "0.2s ease" }}>
                                 <img alt="" style={{ width: "100%", borderRadius: "20px" }} src={item.image}></img>

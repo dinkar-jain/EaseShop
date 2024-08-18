@@ -12,6 +12,7 @@ import React from 'react'
 const Product = () => {
 
     const { userInfo } = useSelector(state => state.signIn) || {};
+    const { products } = useSelector((state) => state.products);
 
     const dispatch = useDispatch();
 
@@ -68,7 +69,14 @@ const Product = () => {
             }
 
         };
-        fetchProductsData();
+
+        const product = products.find((item) => item._id === id);
+        if (!product) {
+            fetchProductsData();
+        }
+        else {
+            setProductsData(product);
+        }
     }, []);
 
     return (

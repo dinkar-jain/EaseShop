@@ -1,12 +1,17 @@
+import { fetchProductsAction } from "../redux/actions/productsAction";
+import { useDispatch, useSelector } from "react-redux";
 import ReactPaginate from 'react-paginate';
 import { Link } from 'react-router-dom';
-import axios from '../Axios';
 import React from 'react'
 
 const Products = () => {
 
+    const dispatch = useDispatch();
+
+    const products = useSelector((state) => state.products.products);
+
     const [dropdown, setDropdown] = React.useState(false);
-    const [items, setItems] = React.useState([])
+    const [items, setItems] = React.useState(products);
     const [itemOffset, setItemOffset] = React.useState(0);
 
     let btnRef = React.useRef(null);
@@ -21,16 +26,14 @@ const Products = () => {
     };
 
     React.useEffect(() => {
-        const fetchProducts = async () => {
-            const response = await axios.get('/API/Products');
-            setItems(response.data);
-        }
         const closeDropdown = (event) => {
             if (!btnRef.current.contains(event.target)) {
                 setDropdown(false);
             }
         }
-        fetchProducts();
+        if (products.length === 0) {
+            dispatch(fetchProductsAction());
+        }
         document.addEventListener('click', closeDropdown);
         return () => { document.removeEventListener('click', closeDropdown) }
     }, []);
