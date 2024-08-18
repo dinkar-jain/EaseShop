@@ -2,10 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "Config.js",
+  "main": "api/index.js",
   "scripts": {
-    "build": "npm install  && cd ./frontend && npm install && npm run build",
-    "start": "nodemon Server.js"
+    "build": "npm install",
+    "start": "node api/index.js",
+    "dev": "nodemon api/index.js"
   },
   "type": "module",
   "author": "",
