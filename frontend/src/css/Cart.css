@@ -1,64 +1,49 @@
-.cart {
-    padding: 30px 58px
-}
-
 .cartMain {
     display: flex;
+    height: 100%;
+    min-height: 94vh;
 }
 
 .cartMainLeft {
-    width: 70%;
+    padding: 30px 58px;
+    width: 66%;
 }
 
 .cartMainRight {
-    width: 30%;
-    margin: 0rem 0px 0px 4rem
+    background-color: #f6f7f7;
+    width: 33%;
 }
 
-.cartMainLeftProduct {
-    display: grid;
-    grid-template-columns: 50% 1fr 12% 1fr;
-    grid-gap: 1rem;
-    width: 100%;
+.cartMainRightInner {
+    padding-left: 40px;
+    margin-right: 20px;
+    margin-top: 6rem;
 }
 
 @media screen and (max-width: 850px) {
-    .cart {
-        padding: 30px 30px;
-    }
-
     .cartMain {
         flex-direction: column;
     }
 
     .cartMainLeft {
-        width: 100%;
+        padding: 30px 10px;
+        width: auto;
     }
 
     .cartMainRight {
         width: 100%;
         margin: 0rem 0px 0px 0rem
     }
+
+    .cartMainRightInner {
+        padding-left: 10px;
+        margin-right: 10px;
+        margin-top: 2rem;
+    }
 }
 
 @media screen and (max-width: 520px) {
-    .cart {
-        padding: 30px 10px;
-    }
-
     .cart img {
         width: 90px !important;
-    }
-
-    .cartMainLeftProduct {
-        grid-template-columns: 60% 20% 1fr;
-    }
-
-    .cartMainLeftProductEachPrice {
-        display: none;
-    }
-
-    .cartMainLeftProductInStock {
-        display: none;
     }
 }
