@@ -12,7 +12,6 @@
     display: flex;
     justify-content: space-around;
     padding: 1rem 0rem;
-    flex-wrap: wrap;
 }
 
 #orderDetails {
@@ -124,7 +123,11 @@
     background-color: #27aa80;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
+    #orderOverview {
+        flex-direction: column;
+    }
+
     #order-overlay {
         width: 95% !important;
     }

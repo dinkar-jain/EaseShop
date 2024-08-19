@@ -144,7 +144,7 @@ const Order = (props) => {
                                                 order.orderItems.map(product => {
                                                     return (
                                                         <>
-                                                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "1rem", }}>
+                                                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "1rem", overflow: "scroll" }}>
                                                                 <div className="cartMainLeftProduct">
                                                                     <div style={{ display: "flex", marginRight: "2rem", }}>
                                                                         <img src={product.image} alt="product" style={{ width: "100px" }} />

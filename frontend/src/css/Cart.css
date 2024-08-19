@@ -20,6 +20,13 @@
     margin-top: 6rem;
 }
 
+.cartMainLeftProduct {
+    display: grid;
+    grid-template-columns: 50% 1fr 12% 1fr;
+    grid-gap: 1rem;
+    width: 100%;
+}
+
 @media screen and (max-width: 850px) {
     .cartMain {
         flex-direction: column;
@@ -45,5 +52,13 @@
 @media screen and (max-width: 520px) {
     .cart img {
         width: 90px !important;
+    }
+
+    .cartMainLeftProduct {
+        grid-template-columns: 2fr 0.5fr 0.5fr;
+    }
+
+    .cartMainLeftProductEachPrice {
+        display: none;
     }
 }

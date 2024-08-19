@@ -43,17 +43,15 @@ const Orders = () => {
                   <tr>
                     <th style={{ textAlign: 'left', color: "rgb(137, 138, 154)", fontSize: '12px', lineHeight: '16px', padding: '16px', fontWeight: 500 }}>Date</th>
                     <th style={{ textAlign: 'left', color: "rgb(137, 138, 154)", fontSize: '12px', lineHeight: '16px', padding: '16px', fontWeight: 500 }}>Id</th>
-                    <th style={{ textAlign: 'left', color: "rgb(137, 138, 154)", fontSize: '12px', lineHeight: '16px', padding: '16px', fontWeight: 500 }}>Paid</th>
+                    <th style={{ textAlign: 'left', color: "rgb(137, 138, 154)", fontSize: '12px', lineHeight: '16px', padding: '16px', fontWeight: 500 }}>Mode of Payment</th>
                     <th style={{ textAlign: 'left', color: "rgb(137, 138, 154)", fontSize: '12px', lineHeight: '16px', padding: '16px', fontWeight: 500 }}>Delivery Status</th>
-                    <th style={{ textAlign: 'left', color: "rgb(137, 138, 154)", fontSize: '12px', lineHeight: '16px', padding: '16px', fontWeight: 500 }}>Amount</th>
+                    <th style={{ textAlign: 'left', color: "rgb(137, 138, 154)", fontSize: '12px', lineHeight: '16px', padding: '16px', fontWeight: 500 }}>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {orders.map((order) => {
                     return (
-                      <tr style={{ cursor: "pointer" }} onClick={() => {
-                        setOrder(order)
-                      }} key={order._id}>
+                      <tr key={order._id}>
                         <td style={{ textAlign: 'left', fontFamily: "Roboto, sans-serif", lineHeight: "16px", fontSize: "16px" }}>{
                           new Date(order.date).toLocaleDateString("en-US", {
                             year: "numeric",
@@ -62,17 +60,15 @@ const Orders = () => {
                           })
                         }</td>
                         <td style={{ textAlign: 'left', fontFamily: "Roboto, sans-serif", lineHeight: "16px", fontSize: "16px" }}>{order._id}</td>
-                        <td style={{ textAlign: 'left', fontFamily: "Roboto, sans-serif", lineHeight: "16px", fontSize: "16px" }}>{
-                          order.paid === "Paid" ? <span style={{ color: "green" }}>Paid</span> : <span style={{ color: "red" }}>Not Paid</span>
-                        }</td>
-                        <td style={{ textAlign: 'left', fontFamily: "Roboto, sans-serif", lineHeight: "16px", fontSize: "16px" }}>{
-                          order.deliveryStatus === "Delivered" ? <span style={{ color: "green" }}>{order.deliveryStatus}</span> : order.deliveryStatus === "Cancelled" ? <span style={{ color: "red" }}>{order.deliveryStatus}</span> : <span style={{ color: "orange" }}>{order.deliveryStatus}</span>
-                        }</td>
-                        <td style={{ textAlign: 'left', fontFamily: "Roboto, sans-serif", lineHeight: "16px", fontSize: "16px" }}>${
-                          order.orderItems.reduce((a, c) => a + c.price * c.quantity, 0) +
-                          Math.round(order.orderItems.reduce((acc, item) => acc + item.price * item.quantity, 0) * 0.18) +
-                          (order.deliveryMethod === "Standard" ? 0 : 5)
-                        }</td>
+                        <td style={{ textAlign: 'left', fontFamily: "Roboto, sans-serif", lineHeight: "16px", fontSize: "16px" }}>{order.paid === "Paid" ? "Paid via Online" : "Cash on Delivery"}</td>
+                        <td style={{ textAlign: 'left', fontFamily: "Roboto, sans-serif", lineHeight: "16px", fontSize: "16px" }}>
+                          <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.25rem 0.5rem', backgroundColor: order.deliveryStatus === "Delivered" ? '#d4edda' : order.deliveryStatus === "Cancelled" ? '#f8d7da' : '#fff3cd', color: order.deliveryStatus === "Delivered" ? '#155724' : order.deliveryStatus === "Cancelled" ? '#721c24' : '#856404', borderRadius: '0.25rem', fontWeight: 500 }}>
+                            {order.deliveryStatus === "Not Delivered" ? "In Progress" : order.deliveryStatus}
+                          </span>
+                        </td>
+                        <td style={{ padding: "0.75rem", display: "flex", alignItems: "center" }}>
+                          <button onClick={() => { setOrder(order) }} style={{ padding: "0.25rem 0.5rem", backgroundColor: "#F5F7FA", border: "1px solid #868e96", borderRadius: "0.25rem", color: "#868e96" }}>View</button>
+                        </td>
                       </tr>
                     )
                   })}
